@@ -9,13 +9,14 @@ public class PersonalTrainer : MonoBehaviour
     int precioCardio = 1000;
     int precioFuerza = 1500;
     int precioRecreativo = 2500;
-    float precioConDescuento = 0.9f;
+    float precioConDescuento = 0.9f; // va a tener que pagar el 90% del total, por eso lo hice asi
     float precioFinal;
     int horasMaxima = 6;
     int horaMinima = 1;
     string codigoCardio = "Cardio";
     string codigoFuerza = "Fuerza";
     string codigoRecreativo = "Recreativo";
+
     // Start is called before the first frame update
     void Start()
     {
