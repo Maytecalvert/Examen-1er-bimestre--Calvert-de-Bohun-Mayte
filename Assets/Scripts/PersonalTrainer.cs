@@ -11,30 +11,35 @@ public class PersonalTrainer : MonoBehaviour
     int precioRecreativo = 2500;
     float precioConDescuento = 0.9f;
     float precioFinal;
+    int horasMaxima = 6;
+    int horaMinima = 1;
+    string codigoCardio = "Cardio";
+    string codigoFuerza = "Fuerza";
+    string codigoRecreativo = "Recreativo";
     // Start is called before the first frame update
     void Start()
     {
 
-        if (horasDeEntrenamiento > 6 || horasDeEntrenamiento < 1 )
+        if (horasDeEntrenamiento > horasMaxima || horasDeEntrenamiento < horaMinima )
         {
             Debug.Log("Error, no se pueden menos de una hora o más de 6 de entrenamiento");
             return;
         }
-        if (tipoDeEntrenamiento != "Cardio" && tipoDeEntrenamiento != "Fuerza" && tipoDeEntrenamiento != "Recreativo")
+        if (tipoDeEntrenamiento != codigoCardio && tipoDeEntrenamiento != codigoFuerza && tipoDeEntrenamiento != codigoRecreativo)
         {
             Debug.Log("Error, ese entrenamiento no existe o no esta disponible");
             return;
         }
 
-        if (tipoDeEntrenamiento == "Cardio")
+        if (tipoDeEntrenamiento == codigoCardio)
         {
             precioFinal = precioCardio * horasDeEntrenamiento;
         }
-        else if (tipoDeEntrenamiento == "Fuerza")
+        else if (tipoDeEntrenamiento == codigoFuerza)
         {
             precioFinal = precioFuerza * horasDeEntrenamiento;
         }
-        else if (tipoDeEntrenamiento == "Recreativo")
+        else if (tipoDeEntrenamiento == codigoRecreativo)
         {
             precioFinal = precioRecreativo * horasDeEntrenamiento;
         }
@@ -43,10 +48,10 @@ public class PersonalTrainer : MonoBehaviour
         Debug.Log("Tu entrenamiento es " + tipoDeEntrenamiento + " lo haras un total de " + horasDeEntrenamiento
             + " y te saldra " + precioFinal + "$");
 
-        if (horasDeEntrenamiento == 6)
+        if (horasDeEntrenamiento == horasMaxima)
         {
             precioFinal = precioFinal * precioConDescuento;
-            Debug.Log("Al contratarnos por 6 horas, tenes un 10% de descuento este sera su precio con descuento "
+            Debug.Log("Al contratarnos por 6 horas, tenes un 10% de descuento este sera tu precio con descuento "
                 + precioFinal + "$");
         }
     }

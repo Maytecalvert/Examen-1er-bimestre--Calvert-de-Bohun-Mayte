@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipoDeEntrenamiento: Cardo
-  horasDeEntrenamiento: 3
+  horasDeEntrenamiento: 1
 --- !u!4 &1394024029
 Transform:
   m_ObjectHideFlags: 0
